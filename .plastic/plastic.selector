@@ -1,4 +1,0 @@
-repository "2D Adventure@Jeffery@cloud"
-  path "/"
-    br "/main"
-    co "/main"
