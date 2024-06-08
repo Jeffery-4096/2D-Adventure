@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
+// Test commited
 [RequireComponent(typeof(Rigidbody2D), typeof(Animator), typeof(PhysicsCheck))]
 public class Enemy : MonoBehaviour
 {
