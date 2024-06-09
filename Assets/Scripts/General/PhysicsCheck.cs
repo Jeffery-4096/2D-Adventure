@@ -46,18 +46,13 @@ public class PhysicsCheck : MonoBehaviour
 
     public void Check()
     {
-        // Check Ground
-        // isGround = Physics2D.OverlapCircle((Vector2)transform.position + bottomOffset, checkRaduis, groundLayer);
         if (onWall)
             isGround = Physics2D.OverlapCircle((Vector2)transform.position + new Vector2(bottomOffset.x * transform.localScale.x, bottomOffset.y), checkRaduis, groundLayer);
         else
             isGround = Physics2D.OverlapCircle((Vector2)transform.position + new Vector2(bottomOffset.x * transform.localScale.x, 0), checkRaduis, groundLayer);
 
-        // touchLeftWall = Physics2D.OverlapCircle((Vector2)transform.position + leftOffset, checkRaduis, groundLayer);
-        // touchRightWall = Physics2D.OverlapCircle((Vector2)transform.position + rightOffset, checkRaduis, groundLayer);
         touchLeftWall = Physics2D.OverlapCircle((Vector2)transform.position + new Vector2(leftOffset.x, leftOffset.y), checkRaduis, groundLayer);
         touchRightWall = Physics2D.OverlapCircle((Vector2)transform.position + new Vector2(rightOffset.x, rightOffset.y), checkRaduis, groundLayer);
-
         // On wall
         if (isPlayer)
             onWall = (touchLeftWall && playerController.inputDirection.x < 0 || touchRightWall && playerController.inputDirection.x > 0) && rb.velocity.y < 0;
@@ -65,9 +60,6 @@ public class PhysicsCheck : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        // Gizmos.DrawWireSphere((Vector2)transform.position + bottomOffset, checkRaduis);
-        // Gizmos.DrawWireSphere((Vector2)transform.position + leftOffset, checkRaduis);
-        // Gizmos.DrawWireSphere((Vector2)transform.position + rightOffset, checkRaduis);
         Gizmos.DrawWireSphere((Vector2)transform.position + new Vector2(bottomOffset.x * transform.localScale.x, bottomOffset.y), checkRaduis);
         Gizmos.DrawWireSphere((Vector2)transform.position + new Vector2(leftOffset.x, leftOffset.y), checkRaduis);
         Gizmos.DrawWireSphere((Vector2)transform.position + new Vector2(rightOffset.x, rightOffset.y), checkRaduis);
