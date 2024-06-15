@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Boar : Enemy
@@ -12,3 +11,4 @@ public class Boar : Enemy
         chaseState = new BoarChaseState();
     }
 }
+
