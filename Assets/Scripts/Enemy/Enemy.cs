@@ -227,7 +227,7 @@ public class Enemy : MonoBehaviour
         physicsCheck = GetComponent<PhysicsCheck>();
 
         currentSpeed = normalSpeed;
-        // waitTimeCounter = waitTime;
+        waitTimeCounter = waitTime;
         spwanPoint = transform.position;
     }
 
@@ -283,10 +283,10 @@ public class Enemy : MonoBehaviour
         {
             lostTimeCounter -= Time.deltaTime;
         }
-        // else
-        // {
-        //     lostTimeCounter = lostTime;
-        // }
+        else
+        {
+            lostTimeCounter = lostTime;
+        }
     }
 
     public virtual bool FoundPlayer()
@@ -318,13 +318,12 @@ public class Enemy : MonoBehaviour
     public void OnTakeDamage(Transform attackTrans)
     {
         attacker = attackTrans;
-        //转身
+        // Turn
         if (attackTrans.position.x - transform.position.x > 0)
             transform.localScale = new Vector3(1, 1, 1);
         if (attackTrans.position.x - transform.position.x < 0)
             transform.localScale = new Vector3(-1, 1, 1);
 
-        //受伤被击退
         isHurt = true;
         anim.SetTrigger("hurt");
         Vector2 dir = new Vector2(transform.position.x - attackTrans.position.x, 0).normalized;

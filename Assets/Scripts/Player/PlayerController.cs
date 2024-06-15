@@ -205,7 +205,7 @@ public class PlayerController : MonoBehaviour
         coll.sharedMaterial = physicsCheck.isGround  ? normal : wall;
 
         if (physicsCheck.onWall)
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 1.125f);
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 1.5f);
         else
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y);
 
