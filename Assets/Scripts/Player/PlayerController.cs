@@ -217,4 +217,9 @@ public class PlayerController : MonoBehaviour
         else
             gameObject.layer = LayerMask.NameToLayer("Player");
     }
+
+    public void DestroyAfterAnimation()
+    {
+        Destroy(this.gameObject);
+    }
 }
