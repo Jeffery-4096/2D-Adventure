@@ -71,6 +71,15 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Confirm"",
+                    ""type"": ""Button"",
+                    ""id"": ""870f6518-38e4-498d-a148-da6772d20d42"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -291,6 +300,28 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Slide"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2d24b36f-0746-4a84-a4cf-f87b561ce9d6"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""385e073a-7e4b-44d1-aece-d7050bfa9f0f"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Confirm"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -883,6 +914,7 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
         m_Gameplay_WalkButton = m_Gameplay.FindAction("WalkButton", throwIfNotFound: true);
         m_Gameplay_Attack = m_Gameplay.FindAction("Attack", throwIfNotFound: true);
         m_Gameplay_Slide = m_Gameplay.FindAction("Slide", throwIfNotFound: true);
+        m_Gameplay_Confirm = m_Gameplay.FindAction("Confirm", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -961,6 +993,7 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_WalkButton;
     private readonly InputAction m_Gameplay_Attack;
     private readonly InputAction m_Gameplay_Slide;
+    private readonly InputAction m_Gameplay_Confirm;
     public struct GameplayActions
     {
         private @PlayerInputControl m_Wrapper;
@@ -970,6 +1003,7 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
         public InputAction @WalkButton => m_Wrapper.m_Gameplay_WalkButton;
         public InputAction @Attack => m_Wrapper.m_Gameplay_Attack;
         public InputAction @Slide => m_Wrapper.m_Gameplay_Slide;
+        public InputAction @Confirm => m_Wrapper.m_Gameplay_Confirm;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -994,6 +1028,9 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
             @Slide.started += instance.OnSlide;
             @Slide.performed += instance.OnSlide;
             @Slide.canceled += instance.OnSlide;
+            @Confirm.started += instance.OnConfirm;
+            @Confirm.performed += instance.OnConfirm;
+            @Confirm.canceled += instance.OnConfirm;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -1013,6 +1050,9 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
             @Slide.started -= instance.OnSlide;
             @Slide.performed -= instance.OnSlide;
             @Slide.canceled -= instance.OnSlide;
+            @Confirm.started -= instance.OnConfirm;
+            @Confirm.performed -= instance.OnConfirm;
+            @Confirm.canceled -= instance.OnConfirm;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -1200,6 +1240,7 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
         void OnWalkButton(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnSlide(InputAction.CallbackContext context);
+        void OnConfirm(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

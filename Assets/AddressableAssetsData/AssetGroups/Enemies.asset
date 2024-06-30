@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Enemies
+  m_EditorClassIdentifier: 
+  m_GroupName: Enemies
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b9ac614421c4198439b3e73f1671fb2d
+  m_SerializeEntries:
+  - m_GUID: 667b2c609bf7d25439c8191236f1c4e1
+    m_Address: Bee
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 768a3746e05290346aa0b72a68d20e22
+    m_Address: Boar
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f586ecdccfdc76d478437c470911a230
+    m_Address: Snail
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 3351653a8228a4a49b8d85406fe561da, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7641230ad6153a7468fb51cc9167e01f, type: 2}
+    - {fileID: 11400000, guid: 8de8175c92d7ffe4aba48a7c8602aa1c, type: 2}

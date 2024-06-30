@@ -7,6 +7,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Event Listen")]
+    public SceneLoadEventSO loadEvent;
+    public VoidEventSO afterSceneLoadedEvent;
+
     public PlayerInputControl inputControl;
     private Rigidbody2D rb;
     private CapsuleCollider2D coll;
@@ -72,11 +76,15 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         inputControl.Enable();
+        loadEvent.LoadRequestEvent += OnLoadEvent;
+        afterSceneLoadedEvent.onEventRaised += OnAfterSceneLoadedEvent;
     }
 
     private void OnDisable()
     {
         inputControl.Disable();
+        loadEvent.LoadRequestEvent -= OnLoadEvent;
+        afterSceneLoadedEvent.onEventRaised -= OnAfterSceneLoadedEvent;
     }
 
     private void Update()
@@ -97,6 +105,16 @@ public class PlayerController : MonoBehaviour
     // {
         // Debug.Log(other.name);
     // }
+
+    private void OnLoadEvent(GameSceneSO arg0, Vector3 arg1, bool arg2)
+    {
+        inputControl.Gameplay.Disable();
+    }
+
+    private void OnAfterSceneLoadedEvent()
+    {
+        inputControl.Gameplay.Enable();
+    }
 
     public void Move()
     {

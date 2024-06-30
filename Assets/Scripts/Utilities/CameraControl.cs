@@ -6,6 +6,9 @@ using System;
 
 public class CameraControl : MonoBehaviour
 {
+    [Header("Event Listen")]
+    public VoidEventSO afterSceneLoadedEvent;
+
     private CinemachineConfiner2D confiner2D;
     public CinemachineImpulseSource impulseSource;
     public VoidEventSO cameraShakeEvent;
@@ -18,11 +21,18 @@ public class CameraControl : MonoBehaviour
     private void OnEnable()
     {
         cameraShakeEvent.onEventRaised += OnCameraShakeEvent;
+        afterSceneLoadedEvent.onEventRaised += OnAfterSceneLoadedEvent;
     }
 
     private void OnDisable()
     {
         cameraShakeEvent.onEventRaised -= OnCameraShakeEvent;
+        afterSceneLoadedEvent.onEventRaised -= OnAfterSceneLoadedEvent;
+    }
+
+    private void OnAfterSceneLoadedEvent()
+    {
+        GetNewCameraBounds();
     }
 
     private void OnCameraShakeEvent()
@@ -30,10 +40,10 @@ public class CameraControl : MonoBehaviour
         impulseSource.GenerateImpulse();
     }
 
-    private void Start()
-    {
-        GetNewCameraBounds();
-    }
+    // private void Start()
+    // {
+    //     GetNewCameraBounds();
+    // }
 
     private void GetNewCameraBounds()
     {
