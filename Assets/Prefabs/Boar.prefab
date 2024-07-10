@@ -33,7 +33,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3734503342177598331}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12.68, y: 9.04, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -78,9 +78,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -448041781
-  m_SortingLayer: 2
-  m_SortingOrder: 3
+  m_SortingLayerID: -675023131
+  m_SortingLayer: 3
+  m_SortingOrder: 45
   m_Sprite: {fileID: 819161337, guid: 1002ffab00dc64d49abf08a6f4274679, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -250,7 +250,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   anim: {fileID: 0}
   physicsCheck: {fileID: 0}
-  normalSpeed: 100
+  normalSpeed: 75
   chaseSpeed: 350
   currentSpeed: 0
   faceDir: {x: 0, y: 0, z: 0}

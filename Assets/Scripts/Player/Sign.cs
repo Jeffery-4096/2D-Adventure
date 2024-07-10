@@ -61,16 +61,17 @@ public class Sign : MonoBehaviour
             // Debug.Log(((InputAction)obj).activeControl.device);
 
             var d = ((InputAction)obj).activeControl.device;
-
-            switch (d.device)
+            if (d != null)
             {
-                case Keyboard:
-                    anim.Play("keyboard");
-                    break;
-                case XInputController:
-                    anim.Play("xbox");
-                    break;
-                
+                switch (d.device)
+                {
+                    case Keyboard:
+                        anim.Play("keyboard");
+                        break;
+                    case XInputController:
+                        anim.Play("xbox");
+                        break;
+                }
             }
         }
     }
