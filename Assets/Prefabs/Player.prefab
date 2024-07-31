@@ -516,7 +516,7 @@ MonoBehaviour:
   speed: 300
   jumpForce: 16.5
   wallJumpForce: 8.5
-  hurtForce: 8
+  hurtForce: 0
   slideDistance: 4.5
   slideSpeed: 0.3
   slidePowerCost: 5
