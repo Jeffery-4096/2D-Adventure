@@ -517,7 +517,7 @@ MonoBehaviour:
   jumpForce: 16.5
   wallJumpForce: 8.5
   hurtForce: 0
-  slideDistance: 4.5
+  slideDistance: 5
   slideSpeed: 0.3
   slidePowerCost: 5
   normal: {fileID: 6200000, guid: 69ba548196536424cbf8aa59a452eecd, type: 2}
