@@ -518,8 +518,8 @@ MonoBehaviour:
   wallJumpForce: 8.5
   hurtForce: 0
   slideDistance: 5
-  slideSpeed: 0.3
-  slidePowerCost: 5
+  slideSpeed: 0.2
+  slidePowerCost: 4
   normal: {fileID: 6200000, guid: 69ba548196536424cbf8aa59a452eecd, type: 2}
   wall: {fileID: 6200000, guid: 63b88aaf77d54ca49b6bf105f70f6e5c, type: 2}
   isHurt: 0
@@ -666,7 +666,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 883a6003023a4454391ef45eb6bdacaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 3aca1bcd-ea9e-4cf6-bffd-a4228f0b6eed
+  persistentType: 0
+  ID: 0dbdbc5d-6442-4515-9c8a-a63c9efeb8f5
 --- !u!1 &7705767519257866551
 GameObject:
   m_ObjectHideFlags: 0

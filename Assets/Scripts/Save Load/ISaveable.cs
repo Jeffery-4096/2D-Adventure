@@ -4,8 +4,17 @@ using UnityEngine;
 
 public interface ISaveable
 {
-    void RegisterSaveData() => DataManager.instance.RegisterSaveData(this);
-    void UnRegisterSaveData() => DataManager.instance.UnRegisterSaveData(this);
+    DataDefinition GetDataID();
+    void RegisterSaveData()
+    {
+        if (DataManager.instance != null)
+            DataManager.instance.RegisterSaveData(this);
+    }
+    void UnRegisterSaveData()
+    {
+        if (DataManager.instance != null)
+            DataManager.instance.UnRegisterSaveData(this);
+    }
 
     void GetSaveData(Data data);
     void LoadData(Data data);

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5374292535926551988}
   - component: {fileID: 1271271322194694982}
   - component: {fileID: 6084282437041666895}
+  - component: {fileID: 7105492943772743815}
   m_Layer: 8
   m_Name: Bee
   m_TagString: Untagged
@@ -231,7 +232,7 @@ MonoBehaviour:
   waitTime: 1
   waitTimeCounter: 0
   wait: 0
-  lostTime: 3
+  lostTime: 1.5
   lostTimeCounter: 0
   isHurt: 0
   isDead: 0
@@ -329,6 +330,20 @@ MonoBehaviour:
   damage: 15
   attackRange: 1
   attackRate: 1.75
+--- !u!114 &7105492943772743815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2913581694832219650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883a6003023a4454391ef45eb6bdacaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  persistentType: 0
+  ID: 1d1ac09a-f45b-45da-b5de-181ad45996d5
 --- !u!1 &5739277322212899968
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class SavePoint : MonoBehaviour, IInteractable
 {
-    public VoidEventSO LoadGameEvent;
+    public VoidEventSO saveDataEvent;
     public SpriteRenderer spriteRenderer;
     public GameObject lightObj;
     public Sprite darkSprite;
     public Sprite lightSprite;
     public bool isDone;
+
 
     private void OnEnable()
     {
@@ -26,7 +27,7 @@ public class SavePoint : MonoBehaviour, IInteractable
             lightObj.SetActive(true);
 
             // Save data
-            LoadGameEvent.RaiseEvent();
+            saveDataEvent.RaiseEvent();
 
             this.gameObject.tag = "Untagged";
         }
