@@ -128,10 +128,14 @@ public class Character : MonoBehaviour, ISaveable
         if (data.characterPosDict.ContainsKey(GetDataID().ID))
         {
             data.characterPosDict[GetDataID().ID] = transform.position;
+            data.floatSavedData[GetDataID().ID + "health"] = this.currentHealth;
+            data.floatSavedData[GetDataID().ID + "power"] = this.currentPower;
         }
         else
         {
             data.characterPosDict.Add(GetDataID().ID, transform.position);
+            data.floatSavedData.Add(GetDataID().ID + "health", this.currentHealth);
+            data.floatSavedData.Add(GetDataID().ID + "power", this.currentPower);
         }
     }
 
@@ -140,6 +144,10 @@ public class Character : MonoBehaviour, ISaveable
         if (data.characterPosDict.ContainsKey(GetDataID().ID))
         {
             transform.position = data.characterPosDict[GetDataID().ID];
+            this.currentHealth = data.floatSavedData[GetDataID().ID + "health"];
+            this.currentPower = data.floatSavedData[GetDataID().ID + "power"];
+
+            OnHealthChange?.Invoke(this);
         }
     }
 }
